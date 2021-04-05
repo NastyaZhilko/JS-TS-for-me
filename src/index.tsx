@@ -3,7 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {splitIntoWords} from "./tasks/01";
 
+const sentence = "Hello my friends";
+const result = splitIntoWords(sentence)
+console.log(result)
 ReactDOM.render(
   <React.StrictMode>
     <App />

@@ -1,41 +1,48 @@
-import {getBanknotes, getSum, getTriangleType, isEvenSumGreater, isSquareGreater} from "./01";
+import {mult, splitIntoWords, sum} from "./01";
 
-test("getTriangleType", () => {
-    expect(getTriangleType(3, 3, 3)).toBe("10")
-    expect(getTriangleType(1, 3, 3)).toBe("01")
-    expect(getTriangleType(5, 4, 3)).toBe("11")
-    expect(getTriangleType(9, 3, 3)).toBe("00")
+//data
+let a:number;
+let b:number;
+let c:number;
+beforeEach(()=>{
+     a=1;
+     b=2;
+     c=3;
+})
+test('sum should be correct', ()=>{
+
+    //action
+    const result1 = sum(a,b)
+    const result2 = sum(b,c)
+
+    //expect result
+    expect(result1).toBe(3)
+    expect(result2).toBe(5)
+
+})
+test('multiply should be correct', ()=>{
+    //data
+
+    //action
+    const result1 = mult(a,c)
+    const result2 = mult(b,c)
+    //expect result
+    expect(result1).toBe(3)
+    expect(result2).toBe(6)
+})
+test('splitting into words should be correct', ()=>{
+    //data
+    const sent1 = "Hello my friends!"
+    const sent2 = "JS - the best programming language"
+    //action
+    const result1 = splitIntoWords(sent1)
+    const result2 = splitIntoWords(sent2)
+    //expect result
+    expect(result1.length).toBe(3)
+    expect(result1[0]).toBe("hello")
+    expect(result1[1]).toBe("my")
+    expect(result1[2]).toBe("friends")
+    expect(result2.length).toBe(5)
+    expect(result2[2]).toBe("best")
 })
 
-test("isSquareGreater", () => {
-    const areaCr = 3
-    const areaSq = 4
-    const result = isSquareGreater(areaCr, areaSq)
-    expect(result ).toBe(true)
-})
-
-test("isEvenSumGreater", () => {
-    const arrEven: Array<number> = [100, 1, 200, 3]
-    const arrOdd: Array<number> = [1, 100, 2, 200]
-    expect(isEvenSumGreater(arrEven)).toBe(true)
-    expect(isEvenSumGreater(arrOdd)).toBe(false)
-})
-test("getSum", ()=>{
-    expect(getSum(1000)).toBe(1)
-    expect(getSum(12345)).toBe(15)
-    expect(getSum(0)).toBe(0)
-    expect(getSum(999)).toBe(18)
-})
-
-test("getBanknotes", ()=>{
-    const result1500=getBanknotes(1500)
-    const result123=getBanknotes(123)
-
-    expect(result1500[0]).toBe(1000)
-    expect(result1500[1]).toBe(500)
-
-    expect(result123[0]).toBe(100)
-    expect(result123[1]).toBe(20)
-    expect(result123[2]).toBe(2)
-    expect(result123[3]).toBe(1)
-})
