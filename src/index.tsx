@@ -4,10 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {splitIntoWords} from "./tasks/01";
+import {sum} from "./tasks/03";
 
-const sentence = "Hello my friends";
-const result = splitIntoWords(sentence)
-console.log(result)
+const a = sum
 ReactDOM.render(
   <React.StrictMode>
     <App />
