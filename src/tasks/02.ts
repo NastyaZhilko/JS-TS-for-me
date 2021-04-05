@@ -1,3 +1,11 @@
+type LocalCityType={
+    title: string
+    country: string
+}
+type AddressType={
+    streetTitle: string
+    city:LocalCityType
+}
 type TechnologiesType = {
     id: number
     title: string
@@ -7,13 +15,7 @@ type StudentType={
     name: string
     age: number
     isActive: boolean
-    address:{
-        streetTitle: string
-        city:{
-            title: string
-            country: string
-        }
-    }
+    address:AddressType
     technologies: Array<TechnologiesType>
 }
 export const student: StudentType = {
